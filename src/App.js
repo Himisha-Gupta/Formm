@@ -1,25 +1,132 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+// QuizForm.js
+import React from 'react';
+import './App.css'; // Import the CSS file
+
+const questionsData = [
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+  {
+    question: 'What is Lorem Ipsum?',
+    options: [
+      'Lorem Ipsum is simply dummy text.',
+      'Lorem Ipsum has been the industry\'s standard dummy text.',
+      'It has survived not only five centuries.',
+      'All of the above.',
+    ],
+  },
+
+  
+  // Add more questions here...
+];
+
+const QuizForm = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="quiz-container">
+     <div className="heading-container">
+        <h1>Lorem Ipsum</h1>
+      </div>
+      <form>
+      
+        {questionsData.map((question, index) => (
+          <div key={index} className="question">
+            <p>{`Question ${index + 1}: ${question.question}`}</p>
+            <select name={`q${index}`}>
+              <option value="">Select an option</option>
+              {question.options.map((option, optionIndex) => (
+                <option key={optionIndex} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+        ))}
+       <div className="button-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
-}
+};
 
-export default App;
+export default QuizForm;
